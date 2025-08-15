@@ -1,0 +1,6 @@
+{
+  "name": "SWGoH Squad Builder & Analyzer",
+  "description": "An application to build and compare team compositions for the game Star Wars: Galaxy of Heroes, featuring AI-powered strategic analysis.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

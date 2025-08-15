@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWGoH Squad Builder & Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/212168da-ee3e-4487-b9f2-28d245ecb3d6/dfc40yr-f1a3f82d-5f80-48c8-9246-f9c16f3ba3a2.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzIxMjE2OGRhLWVlM2UtNDQ4Ny1iOWYyLTI4ZDI0NWVjYjNkNlwvZGZjNDB5ci1mMWEzZjgyZC01ZjgwLTQ4YzgtOTI0Ni1mOWMxNmYzYmEzYTIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6geODoGCl2sPb-slg3RZG7hXWVa6wL02wdQdIokod0Y');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        z-index: -2;
+      }
+      body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(15, 23, 42, 0.85); /* sw-darker with 85% opacity */
+        z-index: -1;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'sw-dark': '#111827',
+              'sw-darker': '#0f172a',
+              'sw-panel': '#1f2937',
+              'sw-border': '#374151',
+              'sw-light': '#d1d5db',
+              'sw-jedi-blue': '#2563eb',
+              'sw-sith-red': '#dc2626',
+              'sw-gold': '#f59e0b',
+            },
+            fontFamily: {
+              'sans': ['"Exo 2"', 'sans-serif'],
+            },
+            animation: {
+              glow: 'glow 2.5s ease-in-out infinite',
+              'glow-red': 'glow-red 2.5s ease-in-out infinite',
+              'glow-blue': 'glow-blue 2.5s ease-in-out infinite',
+              'glow-neutral': 'glow-neutral 2.5s ease-in-out infinite',
+              'marquee': 'marquee var(--marquee-duration, 8s) linear 1s forwards',
+              turnPulse: 'turnPulse 1.3s ease-in-out',
+            },
+            keyframes: {
+              glow: {
+                '0%, 100%': { borderColor: '#f59e0b' },
+                '50%': { borderColor: '#fcd34d' },
+              },
+              'glow-red': {
+                '0%, 100%': { borderColor: '#dc2626' },
+                '50%': { borderColor: '#ef4444' },
+              },
+              'glow-blue': {
+                '0%, 100%': { borderColor: '#2563eb' },
+                '50%': { borderColor: '#60a5fa' },
+              },
+              'glow-neutral': {
+                '0%, 100%': { borderColor: '#6b7280' },
+                '50%': { borderColor: '#d1d5db' },
+              },
+              turnPulse: {
+                '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 rgba(0,0,0,0)' },
+                '40%, 60%': { transform: 'scale(1.15)', boxShadow: '0 0 15px 5px var(--tw-shadow-color)' }
+              },
+              marquee: {
+                'from': { transform: 'translateX(0)' },
+                'to': { transform: 'translateX(var(--marquee-translate))' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.7.0",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.1",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="font-sans">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
